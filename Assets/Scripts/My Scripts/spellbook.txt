@@ -1,0 +1,3 @@
+Basic Wind,Projectile,0.5,10,0,Wind,Wind,Wind,Wind,70
+Basic Ice,Projectile,0.5,10,1,Water,Water,Water,Ice,50
+Basic Fire,Projectile,0.3,20,2,Fire,Fire,Fire,Fire,25

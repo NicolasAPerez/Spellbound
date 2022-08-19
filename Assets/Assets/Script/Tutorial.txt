@@ -1,2 +1,2 @@
-(Use WASD to move, Spacebar to Jump, and Enter to interact) /eYou recall the runic lessons taught in your village as while you journey onward... 
-(Try using IJKL)
+(Use WASD to move, Spacebar to Jump, and Enter to interact) /e(In order to cast spells you'll need to add 3 runes to the spellboard)
+/e(You can use IJKL to add specifc runes to it)/e(Try and explore! Certain spells might work in tandem like Ice and Wind)

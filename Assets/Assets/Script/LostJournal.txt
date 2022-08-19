@@ -1,5 +1,3 @@
-(You find a lost explorer's journal) /e(Most of it is faded but there are some words still visible) /eWind: <sprite=2><sprite=2><sprite=2>
-
-Fire: <sprite=3><sprite=3><sprite=3>
-
-Ice: <sprite=4><sprite=4><sprite=4>
+(You find a lost explorer's journal) /e(Most of it is faded but there are some words still visible) /eD_y 3_:
+Fr_m the collecti_n of maps I ha_e,
+it seems ther_ is _ small t_wn up ahead/e(The rest is impossible to read...)

@@ -119,7 +119,7 @@ public class MovementMage : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (airS == AirState.inAir && collision.gameObject.tag == "Ground")
+        if (airS == AirState.inAir && (collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Flammable"))
         {
             airS = AirState.grounded;
         }

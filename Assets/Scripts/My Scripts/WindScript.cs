@@ -29,7 +29,14 @@ public class WindScript : MonoBehaviour
         {
             if (obj != null)
             {
-                obj.AddForce(windForce * Vector2.up);
+                if (obj.tag != "ToLift")
+                {
+                    obj.AddForce(windForce * Vector2.up);
+                }
+                else
+                {
+                    obj.AddForce(windForce * Vector2.up * 5);
+                }
             }
         }
     }

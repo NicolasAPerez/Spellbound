@@ -4,18 +4,29 @@ using UnityEngine;
 
 public class FireScript : MonoBehaviour
 {
-    public float endTime;
-
     private void Awake()
     {
-        endTime = Time.time + .1f;
-    }
-
-    private void Update()
-    {
-        if (Time.time >= endTime)
+        Collider2D[] col = Physics2D.OverlapCircleAll(transform.position, .5f);
+        foreach (Collider2D c in col)
         {
-            Destroy(gameObject);
+            if (c.tag == "Flammable")
+            {
+                Animator a = c.GetComponent<Animator>();
+                if (a != null)
+                {
+                    a.SetBool("OnFire", true);
+                }
+                else
+                {
+                    Destroy(c.gameObject);
+                }
+            }
+            else if (c.tag == "Enemy")
+            {
+                Destroy(c.gameObject);
+            }
         }
     }
+
+    
 }

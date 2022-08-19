@@ -38,6 +38,9 @@ public class MagicScript : MonoBehaviour
     public GameObject[] residues = new GameObject[1];
     public List<Spell> spellbook = new List<Spell>();
     public TextAsset spellText;
+
+    private AudioSource aSource;
+    public AudioClip spellAudioClip;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +50,7 @@ public class MagicScript : MonoBehaviour
         leftFace = false;
         runeWheelFading = false;
         fillSpellbook();
-
+        aSource = GetComponent<AudioSource>();
         
     }
 
@@ -144,8 +147,11 @@ public class MagicScript : MonoBehaviour
         if (castingSpell)
         {
             Debug.Log("You cast " + spellbook[spellToCast].spellName);
-            Cast(spellToCast);
+            //TODO: Fix this so animation plays when casting a spell
+            //this.GetComponentInChildren<Animator>().SetBool("castingSpell", true);
+            castIfPossible();
             castingSpell = false;
+
         }
     }
 
@@ -199,6 +205,7 @@ public class MagicScript : MonoBehaviour
 
             }
             castedSpell.SetActive(true);
+            aSource.PlayOneShot(spellAudioClip);
             return castedSpell;
         }
         else
@@ -206,5 +213,11 @@ public class MagicScript : MonoBehaviour
             return null;
         }
 
+    }
+
+    public void castIfPossible()
+    {
+        Cast(spellToCast);
+        
     }
 }

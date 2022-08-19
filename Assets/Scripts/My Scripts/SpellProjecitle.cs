@@ -52,7 +52,10 @@ public class SpellProjecitle : MonoBehaviour
 
     void Decay()
     {
-        Instantiate(spellDetails.residueOnDecay, this.transform.position, Quaternion.identity);
+        float xSubtract = (!leftFace) ? -0.25f : 0.25f;
+        xSubtract *= (spellDetails.spellElement == Spell.Element.Fire) ? 0 : 1;
+        Vector3 newPos = new Vector3(transform.position.x + xSubtract, transform.position.y, transform.position.z);
+        Instantiate(spellDetails.residueOnDecay, newPos, Quaternion.identity);
         Destroy(gameObject);
     }
 
